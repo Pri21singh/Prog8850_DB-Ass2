@@ -1,3 +1,5 @@
+Use companydb;
+
 -- Create the projects table if it doesn't exist
 CREATE TABLE IF NOT EXISTS projects (
     project_id INT AUTO_INCREMENT PRIMARY KEY,
