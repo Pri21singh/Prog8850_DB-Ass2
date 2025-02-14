@@ -24,4 +24,4 @@ jobs:
         MYSQLDB_NAME: ${{ secrets.DB_NAME }}
 
       run: |
-        mysql -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE < schema_changes.sql
+        mysql -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQLDB_NAME < schema_changes.sql
