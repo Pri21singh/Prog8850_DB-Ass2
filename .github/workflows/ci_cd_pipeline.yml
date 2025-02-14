@@ -16,9 +16,6 @@ jobs:
     - name: Set up MySQL client
       run: sudo apt-get install -y mysql-client
 
-    - name: Install Python dependencies
-      run: pip install mysql-connector-python
-
     - name: Execute SQL scripts
       env:
         MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
@@ -27,4 +24,4 @@ jobs:
         MYSQLDB_NAME: ${{ secrets.DB_NAME }}
 
       run: |
-        mysql -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE < add_departments.sql
+        mysql -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE < schema_changes.sql

@@ -3,10 +3,10 @@ from mysql.connector import Error
 
 # Database connection details
 DB_CONFIG = {
-    "host": "priyasin94.mysql.database.azure.com",
-    "user": "priyas1994",
-    "password": "Software@2025",
-    "database": "companydb"
+    "host": "server host name",
+    "user": "user name",
+    "password": "the password",
+    "database": "db name"
 }
 
 def execute_sql_script(sql_file):
