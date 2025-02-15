@@ -1,4 +1,4 @@
-Use companydb;
+USE companydb;
 
 -- Create the projects table if it doesn't exist
 CREATE TABLE IF NOT EXISTS projects (
@@ -8,13 +8,5 @@ CREATE TABLE IF NOT EXISTS projects (
     end_date DATE
 );
 
--- Check if the 'budget' column already exists before adding it
-SET @column_exists = (SELECT COUNT(*) 
-                      FROM information_schema.columns 
-                      WHERE table_name = 'projects' 
-                      AND column_name = 'budget');
-
 -- Add the 'budget' column only if it doesn't exist
-IF @column_exists = 0 THEN
-    ALTER TABLE projects ADD COLUMN budget DECIMAL(10, 2);
-END IF;
+ALTER TABLE projects ADD COLUMN budget DECIMAL(10, 2) NULL AFTER end_date;
