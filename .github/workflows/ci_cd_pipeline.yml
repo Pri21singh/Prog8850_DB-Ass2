@@ -29,4 +29,4 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
       run: |
-        mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < schema_changes.sql
+        mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < add_departments.sql
